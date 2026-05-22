@@ -1,4 +1,4 @@
 package com.pluralsight.tacoshop.model;
 
-public class Sides {
+public class Side {
 }
