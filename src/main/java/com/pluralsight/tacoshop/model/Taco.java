@@ -52,6 +52,7 @@ public class Taco implements IPriceable {
         return price;
     }
 
-    public void addTopping() {
+    public void addTopping(Topping topping) {
+        toppings.add(topping);
     }
 }
