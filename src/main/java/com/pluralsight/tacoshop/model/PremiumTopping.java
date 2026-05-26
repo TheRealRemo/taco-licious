@@ -8,6 +8,10 @@ public class PremiumTopping extends Topping {
         this.isExtra = isExtra;
     }
 
+    public boolean isExtra() {
+        return isExtra;
+    }
+
     @Override
     double getPrice(String size) {
         return 0;
