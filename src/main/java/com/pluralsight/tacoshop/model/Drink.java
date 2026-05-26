@@ -3,8 +3,8 @@ package com.pluralsight.tacoshop.model;
 import com.pluralsight.tacoshop.utils.IPriceable;
 
 public class Drink implements IPriceable {
-private String flavor;
-private String size;
+    private String flavor;
+    private String size;
 
     public Drink(String flavor, String size) {
         this.flavor = flavor;
@@ -21,7 +21,15 @@ private String size;
 
     @Override
     public double calculatePrice() {
-        return 0;
+        double price = 0.00;
+        if (size.equalsIgnoreCase("small")) {
+            price = 2.00;
+        } else if (size.equalsIgnoreCase("medium")) {
+            price = 2.50;
+        } else if (size.equalsIgnoreCase("large")) {
+            price = 3.00;
+        }
+        return price;
     }
 
     @Override
