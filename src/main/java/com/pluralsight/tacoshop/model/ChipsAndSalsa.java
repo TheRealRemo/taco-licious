@@ -20,6 +20,7 @@ private String salsaType;
 
     @Override
     public double calculatePrice() {
+
         return 1.50;
     }
 

@@ -1,4 +1,7 @@
 package com.pluralsight.tacoshop.model;
 
-public class Topping {
+public abstract class Topping {
+    private String name;
+
+    abstract double getPrice(String size);
 }
