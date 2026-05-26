@@ -9,7 +9,7 @@ public class Taco implements IPriceable {
     private String shell;
     private ArrayList<Topping> toppings;
     private boolean isCoveredInSalsaAndQueso;
-
+//Empty parameters because we do not know what Taco modifications will be until populated
     public Taco() {
         this.toppings = new ArrayList<>();
     }
@@ -39,7 +39,8 @@ public class Taco implements IPriceable {
     }
 
     @Override
-    public double getPrice() {
+    public double calculatePrice() {
         return 0;
     }
+    public void addTopping(){}
 }
