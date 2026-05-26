@@ -13,10 +13,5 @@ public class PremiumTopping extends Topping {
         return 0;
     }
 
-    @Override
-    public String toString() {
-        return "PremiumTopping{" +
-                "isExtra=" + isExtra +
-                '}';
-    }
+
 }

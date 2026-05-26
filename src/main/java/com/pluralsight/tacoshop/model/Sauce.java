@@ -1,7 +1,7 @@
 package com.pluralsight.tacoshop.model;
 
-public class Side extends Topping {
-    public Side(String name) {
+public class Sauce extends Topping{
+    public Sauce(String name) {
         super(name);
     }
 
