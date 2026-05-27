@@ -8,6 +8,10 @@ import java.util.List;
 public class Order implements IPriceable {
     private ArrayList<IPriceable> items;
 
+    public Order() {
+        this.items = new ArrayList<>();
+    }
+
     public void addItem(IPriceable priceable) {
         items.add(priceable);
     }
@@ -17,7 +21,11 @@ public class Order implements IPriceable {
     }
     @Override
     public double calculatePrice() {
-        return 0;
+        double totalPrice = 0.00;
+        for (IPriceable item : items) {
+            totalPrice += item.calculatePrice();
+        }
+        return totalPrice;
     }
 
     @Override
