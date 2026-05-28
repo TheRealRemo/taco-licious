@@ -29,6 +29,12 @@ public class Meat extends PremiumTopping {
 
     @Override
     public String toString() {
-        return super.toString();
+        String extra = "";
+        if (isExtra()) {
+            extra = "(Extra)";
+        } else {
+            extra = "";
+        }
+        return getName() + extra;
     }
 }
