@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class UserInterface {
     private Order order;
     private Scanner scanner = new Scanner(System.in);
-    private ReceiptFileManager fileManager = new ReceiptFileManager();
 
     public void display() {
 
@@ -24,6 +23,7 @@ public class UserInterface {
             System.out.print("Please enter here: ");
             String input = scanner.nextLine().trim();
             if (input.equals("1")) {
+                order = new Order();
                 displayNewOrder();
             } else if (input.equals("0")) {
                 running = false;
@@ -36,18 +36,36 @@ public class UserInterface {
     }
 
     public void displayNewOrder() {
-        displayOrder();
+        boolean isOrdering = true;
+       while (isOrdering){
+           displayOrder();
 
+        System.out.println("\n" + "Order Menu");
+        System.out.println("--------------------------");
+        System.out.println("1) Add Taco");
+        System.out.println("2) Add Drink");
+        System.out.println("3) Add Chips And Salsa");
+        System.out.println("4) Add Side");
+        System.out.println("5) Checkout");
+        System.out.println("0) Cancel Order");
+        String input = scanner.nextLine();
+
+        switch ()
+       }
     }
 
 
     //helper methods
 
-    /// solely for printing out order items
+    /// for printing out order items
     public void displayOrder() {
         System.out.println("--- Your Order ---");
-        for (IPriceable priceable : order.getItems()) {
-            System.out.println(priceable);
+        if (order.getItems().isEmpty()) {
+            System.out.println("Empty");
+        } else {
+            for (IPriceable priceable : order.getItems()) {
+                System.out.println(priceable);
+            }
         }
     }
 }

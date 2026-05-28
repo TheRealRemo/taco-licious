@@ -30,7 +30,6 @@ public class ReceiptFileManager {
             }
             BufferedWriter bw = new BufferedWriter(new FileWriter("receipts/" + fileName));
 
-            //write
             for (IPriceable priceable : order.getItems()) {
                 bw.write(priceable.toString());
                 bw.newLine();

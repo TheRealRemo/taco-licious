@@ -3,7 +3,7 @@ package com.pluralsight.tacoshop.model;
 import com.pluralsight.tacoshop.utils.IPriceable;
 
 public class ChipsAndSalsa implements IPriceable {
-private String salsaType;
+    private String salsaType;
 
     public ChipsAndSalsa(String salsaType) {
         this.salsaType = salsaType;
@@ -27,8 +27,7 @@ private String salsaType;
     @Override
     public String toString() {
         return "ChipsAndSalsa " +
-                  salsaType + " " + calculatePrice();
-
+                salsaType + " " + calculatePrice();
 
 
     }

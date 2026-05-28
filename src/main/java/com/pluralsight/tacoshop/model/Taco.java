@@ -49,10 +49,24 @@ public class Taco implements IPriceable {
         } else if (getSize().equalsIgnoreCase("burrito")) {
             price = 8.50;
         }
-        return price;
+        double toppingPrice = 0.00;
+        for (Topping topping : toppings) {
+            toppingPrice += topping.getPrice(getSize());
+        }
+        return price + toppingPrice;
     }
 
     public void addTopping(Topping topping) {
         toppings.add(topping);
+    }
+
+    @Override
+    public String toString() {
+        return "Taco{" +
+                "size='" + size + '\'' +
+                ", shell='" + shell + '\'' +
+                ", toppings=" + toppings +
+                ", isCoveredInSalsaAndQueso=" + isCoveredInSalsaAndQueso +
+                '}';
     }
 }

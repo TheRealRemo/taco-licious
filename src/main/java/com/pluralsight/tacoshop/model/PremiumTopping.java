@@ -1,6 +1,6 @@
 package com.pluralsight.tacoshop.model;
 
-public class PremiumTopping extends Topping {
+public abstract class PremiumTopping extends Topping {
     private boolean isExtra;
 
     public PremiumTopping(String name, boolean isExtra) {
@@ -12,10 +12,7 @@ public class PremiumTopping extends Topping {
         return isExtra;
     }
 
-    @Override
-    double getPrice(String size) {
-        return 0;
-    }
+    public abstract double getPrice(String size);
 
 
 }

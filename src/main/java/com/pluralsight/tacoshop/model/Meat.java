@@ -7,7 +7,7 @@ public class Meat extends PremiumTopping {
     }
 
     @Override
-    double getPrice(String size) {
+    public double getPrice(String size) {
         double price = 0.00;
         if (size.equalsIgnoreCase("single")) {
             price = 0.75;
