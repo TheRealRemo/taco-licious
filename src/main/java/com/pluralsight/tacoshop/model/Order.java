@@ -41,6 +41,5 @@ public class Order implements IPriceable {
                 .append(String.format("%.2f", calculatePrice()));
 
         return stringBuilder.toString();
-
     }
 }

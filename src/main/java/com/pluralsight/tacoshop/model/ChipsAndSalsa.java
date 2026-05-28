@@ -27,7 +27,5 @@ public class ChipsAndSalsa implements IPriceable {
     @Override
     public String toString() {
         return String.format("Chips & Salsa w/" + salsaType + " $" + String.format("%.2f", calculatePrice()));
-
-
     }
 }

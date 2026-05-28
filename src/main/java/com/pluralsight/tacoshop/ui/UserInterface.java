@@ -49,10 +49,37 @@ public class UserInterface {
             System.out.println("0) Cancel Order");
             String input = scanner.nextLine();
 
+            switch (input) {
+                case "1" -> displayAddTaco();
+                case "2" -> displayAddDrink();
+                case "3" -> displayAddChipsAndSalsa();
+                case "4" -> displayAddSide();
+                case "5" -> displayCheckout();
+                case "0" -> isOrdering = false;
+                default -> System.out.println("Invalid Input Please Try Again");
+            }
+
 
         }
     }
 
+    public void displayAddTaco() {
+
+    }
+
+    public void displayAddDrink() {
+
+    }
+
+    public void displayAddChipsAndSalsa() {
+
+    }
+    public void displayAddSide() {
+
+    }
+    public void displayCheckout() {
+
+    }
 
     //helper methods
 

@@ -8,15 +8,9 @@ import com.pluralsight.tacoshop.ui.UserInterface;
 
 public class TacoShopApplication {
     public static void main(String[] args) {
-      /*  UserInterface ui = new UserInterface();
-        ui.display(); */
-        Order order = new Order();
-       ChipsAndSalsa chipsAndSalsa = new ChipsAndSalsa("Pico De Gallo");
-        Drink drink = new Drink("horchata", "small");
-        order.addItem(drink);
-        order.addItem(chipsAndSalsa);
+        UserInterface ui = new UserInterface();
+        ui.display();
 
-        System.out.println(order);
 
     }
 }
