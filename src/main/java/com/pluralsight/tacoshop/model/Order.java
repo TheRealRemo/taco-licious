@@ -1,9 +1,8 @@
 package com.pluralsight.tacoshop.model;
 
-import com.pluralsight.tacoshop.utils.IPriceable;
+import com.pluralsight.tacoshop.model.interfaces.IPriceable;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Order implements IPriceable {
     private ArrayList<IPriceable> items;

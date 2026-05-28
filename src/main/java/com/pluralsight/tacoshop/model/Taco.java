@@ -1,6 +1,6 @@
 package com.pluralsight.tacoshop.model;
 
-import com.pluralsight.tacoshop.utils.IPriceable;
+import com.pluralsight.tacoshop.model.interfaces.IPriceable;
 
 import java.util.ArrayList;
 

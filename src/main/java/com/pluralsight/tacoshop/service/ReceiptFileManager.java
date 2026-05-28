@@ -1,7 +1,7 @@
 package com.pluralsight.tacoshop.service;
 
 import com.pluralsight.tacoshop.model.Order;
-import com.pluralsight.tacoshop.utils.IPriceable;
+import com.pluralsight.tacoshop.model.interfaces.IPriceable;
 
 import java.io.BufferedWriter;
 import java.io.File;

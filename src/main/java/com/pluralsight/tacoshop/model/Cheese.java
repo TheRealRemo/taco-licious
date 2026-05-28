@@ -29,6 +29,12 @@ public class Cheese extends PremiumTopping {
 
     @Override
     public String toString() {
-        return "Cheese{}";
+        String extra = "";
+        if (isExtra()) {
+            extra = "(Extra)";
+        } else {
+            extra = "";
+        }
+        return getName() + extra;
     }
 }

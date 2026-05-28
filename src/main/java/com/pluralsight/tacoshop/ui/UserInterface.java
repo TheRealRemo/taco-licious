@@ -1,8 +1,7 @@
 package com.pluralsight.tacoshop.ui;
 
 import com.pluralsight.tacoshop.model.Order;
-import com.pluralsight.tacoshop.service.ReceiptFileManager;
-import com.pluralsight.tacoshop.utils.IPriceable;
+import com.pluralsight.tacoshop.model.interfaces.IPriceable;
 
 import java.util.Scanner;
 

@@ -1,6 +1,6 @@
 package com.pluralsight.tacoshop.model;
 
-import com.pluralsight.tacoshop.utils.IPriceable;
+import com.pluralsight.tacoshop.model.interfaces.IPriceable;
 
 public class Drink implements IPriceable {
     private String flavor;
