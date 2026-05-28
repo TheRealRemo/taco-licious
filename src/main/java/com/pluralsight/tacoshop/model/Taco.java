@@ -88,15 +88,21 @@ public class Taco implements IPriceable {
                 .append("\n");
 
         stringBuilder.append("Toppings:\n");
-
+/*
+  Loops through each topping and prints it line-by-line.
+  Premium toppings display their additional cost,
+  while free regular toppings display only their name.
+ */
         for (Topping topping : toppings) {
             double price = topping.getPrice(getSize());
             stringBuilder.append("- ")
                     .append(topping);
+
             if (price > 0) {
                 stringBuilder.append(" $")
                         .append(price);
             }
+
             stringBuilder.append("\n");
         }
 
