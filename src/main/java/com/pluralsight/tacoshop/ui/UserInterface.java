@@ -1,5 +1,6 @@
 package com.pluralsight.tacoshop.ui;
 
+import com.pluralsight.tacoshop.model.Cheese;
 import com.pluralsight.tacoshop.model.Meat;
 import com.pluralsight.tacoshop.model.Order;
 import com.pluralsight.tacoshop.model.Taco;
@@ -51,6 +52,8 @@ public class UserInterface {
             System.out.println("4) Add Side");
             System.out.println("5) Checkout");
             System.out.println("0) Cancel Order");
+            System.out.println("--------------------------");
+            System.out.print("Please enter choice here: ");
             String input = scanner.nextLine();
 
             switch (input) {
@@ -100,6 +103,7 @@ public class UserInterface {
         }
         displayShellChoice(taco);
         displayAddMeat(taco);
+        displayAddCheese(taco);
 
     }
 
@@ -131,6 +135,43 @@ public class UserInterface {
             for (IPriceable priceable : order.getItems()) {
                 System.out.println(priceable);
             }
+        }
+    }
+
+    public void displayShellChoice(Taco taco) {
+        boolean validOption = false;
+        while (!validOption) {
+            System.out.println("Great! What shell would you like?");
+            System.out.println("1.) Corn");
+            System.out.println("2.) Flour");
+            System.out.println("3.) Hard Shell");
+            System.out.println("4.) Bowl");
+            System.out.print("Please choose one of the four options: ");
+
+            String shell = scanner.nextLine();
+
+            switch (shell) {
+                case "1" -> {
+                    taco.setShell("Corn");
+                    validOption = true;
+                }
+                case "2" -> {
+                    taco.setShell("Flour");
+                    validOption = true;
+                }
+                case "3" -> {
+                    taco.setShell("Hard Shell");
+                    validOption = true;
+                }
+                case "4" -> {
+                    taco.setShell("Bowl");
+                    validOption = true;
+                }
+                default -> {
+                    System.out.println("Sorry, please try choosing a valid shell option again.");
+                }
+            }
+
         }
     }
 
@@ -187,40 +228,54 @@ public class UserInterface {
         }
     }
 
-    public void displayShellChoice(Taco taco) {
-        boolean validOption = false;
-        while (!validOption) {
-            System.out.println("Great! What shell would you like?");
-            System.out.println("1.) Corn");
-            System.out.println("2.) Flour");
-            System.out.println("3.) Hard Shell");
-            System.out.println("4.) Bowl");
-            System.out.print("Please choose one of the four options: ");
+    public void displayAddCheese(Taco taco) {
+        boolean addingCheeses = true;
 
-            String shell = scanner.nextLine();
+        while (addingCheeses) {
 
-            switch (shell) {
-                case "1" -> {
-                    taco.setShell("Corn");
-                    validOption = true;
-                }
-                case "2" -> {
-                    taco.setShell("Flour");
-                    validOption = true;
-                }
-                case "3" -> {
-                    taco.setShell("Hard Shell");
-                    validOption = true;
-                }
-                case "4" -> {
-                    taco.setShell("Bowl");
-                    validOption = true;
-                }
+            System.out.println("\nChoose a cheese:");
+            System.out.println("1) Queso Fresco");
+            System.out.println("2) Oaxaca");
+            System.out.println("3) Cotija");
+            System.out.println("4) Cheddar");
+            System.out.println("0) Done Adding Cheese");
+            System.out.print("Please enter option here: ");
+
+            String cheeseChoice = scanner.nextLine();
+
+            if (cheeseChoice.equals("0")) {
+                addingCheeses = false;
+                continue;
+            }
+
+            String cheeseName;
+
+            switch (cheeseChoice) {
+                case "1" -> cheeseName = "Queso Fresco";
+                case "2" -> cheeseName = "Oaxaca";
+                case "3" -> cheeseName = "Cotija";
+                case "4" -> cheeseName = "Cheddar";
                 default -> {
-                    System.out.println("Sorry, please try choosing a valid shell option again.");
+                    System.out.println("Invalid cheese option.");
+                    continue;
                 }
             }
 
+            System.out.println("Would you like extra cheese?");
+            System.out.println("1) Yes");
+            System.out.println("2) No");
+
+            String extraChoice = scanner.nextLine();
+
+            boolean isExtra = extraChoice.equals("1");
+
+            Cheese cheese = new Cheese(cheeseName, isExtra);
+
+            taco.addTopping(cheese);
+
+            System.out.println(cheeseName + " added!");
         }
     }
+
+
 }
