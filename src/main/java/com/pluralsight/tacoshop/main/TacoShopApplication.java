@@ -7,7 +7,11 @@ import com.pluralsight.tacoshop.ui.UserInterface;
 
 public class TacoShopApplication {
     public static void main(String[] args) {
-        UserInterface ui = new UserInterface();
-        ui.display();
+      /*  UserInterface ui = new UserInterface();
+        ui.display(); */
+        Order order = new Order();
+       ChipsAndSalsa chipsAndSalsa = new ChipsAndSalsa("Pico De Gallo");
+
+        System.out.println(chipsAndSalsa);
     }
 }
