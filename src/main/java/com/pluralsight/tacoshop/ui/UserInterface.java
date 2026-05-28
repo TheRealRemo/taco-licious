@@ -325,6 +325,53 @@ public class UserInterface {
 
             System.out.println(toppingName + " added!");
         }
-    }}
+    }
+    public void displayAddSauces(Taco taco) {
+        boolean addingSauces = true;
+
+        while (addingSauces) {
+
+            System.out.println("\nChoose a sauce:");
+            System.out.println("1) Salsa Verde");
+            System.out.println("2) Salsa Roja");
+            System.out.println("3) Chipotle");
+            System.out.println("4) Habanero");
+            System.out.println("5) Mild");
+            System.out.println("6) Extra Hot");
+            System.out.println("0) Done Adding Sauces");
+            System.out.print("Please enter option here: ");
+
+            String sauceChoice = scanner.nextLine();
+
+            if (sauceChoice.equals("0")) {
+                addingSauces = false;
+                continue;
+            }
+
+            String sauceName;
+
+            switch (sauceChoice) {
+                case "1" -> sauceName = "Salsa Verde";
+                case "2" -> sauceName = "Salsa Roja";
+                case "3" -> sauceName = "Chipotle";
+                case "4" -> sauceName = "Habanero";
+                case "5" -> sauceName = "Mild";
+                case "6" -> sauceName = "Extra Hot";
+                default -> {
+                    System.out.println("Invalid sauce option.");
+                    continue;
+                }
+            }
+
+            Sauce sauce = new Sauce(sauceName);
+
+            taco.addTopping(sauce);
+
+            System.out.println(sauceName + " added!");
+        }
+    }
+
+}
+
 
 
