@@ -1,6 +1,7 @@
 package com.pluralsight.tacoshop.ui;
 
 import com.pluralsight.tacoshop.model.Order;
+import com.pluralsight.tacoshop.model.Taco;
 import com.pluralsight.tacoshop.model.interfaces.IPriceable;
 
 import java.util.Scanner;
@@ -64,7 +65,51 @@ public class UserInterface {
     }
 
     public void displayAddTaco() {
+        Taco taco = new Taco();
+        boolean validOption = false;
 
+        while (!validOption) {
+
+            System.out.println("Let's make a new Taco!");
+            System.out.println("Would you like a Single Taco, 3-Taco, or Burrito?");
+            System.out.print("Please choose one of the three options: ");
+
+            String size = scanner.nextLine();
+
+            if (size.equalsIgnoreCase("single")
+                    || size.equalsIgnoreCase("3-taco")
+                    || size.equalsIgnoreCase("burrito")) {
+
+                taco.setSize(size);
+                validOption = true;
+
+            } else {
+                System.out.println("We don't have that kind of taco, (for now) Please try again.");
+            }
+        }
+
+        validOption = false;
+
+        while (!validOption) {
+            System.out.println("Great! What shell would you like?");
+            System.out.println("Corn, Flour, Hard Shell or Bowl?");
+            System.out.print("Please choose one of the four options: ");
+
+            String shell = scanner.nextLine();
+
+            if (shell.equalsIgnoreCase("corn")
+                    || shell.equalsIgnoreCase("flour")
+                    || shell.equalsIgnoreCase("hard shell")
+                    || shell.equalsIgnoreCase("bowl")) {
+
+                taco.setShell(shell);
+                validOption = true;
+
+            } else {
+                System.out.println("Invalid shell option. Please try again.");
+            }
+
+        }
     }
 
     public void displayAddDrink() {
@@ -74,9 +119,11 @@ public class UserInterface {
     public void displayAddChipsAndSalsa() {
 
     }
+
     public void displayAddSide() {
 
     }
+
     public void displayCheckout() {
 
     }
