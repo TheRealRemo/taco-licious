@@ -1,6 +1,6 @@
 package com.pluralsight.tacoshop.model;
 
-public abstract class RegularTopping extends Topping {
+public class RegularTopping extends Topping {
 
 
     public RegularTopping(String name) {
@@ -8,6 +8,8 @@ public abstract class RegularTopping extends Topping {
     }
 
     @Override
-    public abstract double getPrice(String size);
+    public  double getPrice(String size){
+        return 0.00;
+    }
 
 }
