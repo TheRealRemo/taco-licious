@@ -1,5 +1,6 @@
 package com.pluralsight.tacoshop.ui;
 
+import com.pluralsight.tacoshop.model.Meat;
 import com.pluralsight.tacoshop.model.Order;
 import com.pluralsight.tacoshop.model.Taco;
 import com.pluralsight.tacoshop.model.interfaces.IPriceable;
@@ -38,9 +39,11 @@ public class UserInterface {
     public void displayNewOrder() {
         boolean isOrdering = true;
         while (isOrdering) {
-            displayOrder();
+
 
             System.out.println("\n" + "Order Menu");
+            System.out.println("--------------------------");
+            displayOrder();
             System.out.println("--------------------------");
             System.out.println("1) Add Taco");
             System.out.println("2) Add Drink");
@@ -71,20 +74,28 @@ public class UserInterface {
         while (!validOption) {
 
             System.out.println("Let's make a new Taco!");
-            System.out.println("Would you like a Single Taco, 3-Taco, or Burrito?");
-            System.out.print("Please choose one of the three options: ");
+            System.out.println("What kind would you like?");
+            System.out.println("1.) Single Taco ($3.50)");
+            System.out.println("2.) 3-Taco ($9.00)");
+            System.out.println("3.) Burrito? ($8.50)");
+            System.out.print("Please enter one of the three options: ");
 
             String size = scanner.nextLine();
 
-            if (size.equalsIgnoreCase("single")
-                    || size.equalsIgnoreCase("3-taco")
-                    || size.equalsIgnoreCase("burrito")) {
-
-                taco.setSize(size);
-                validOption = true;
-
-            } else {
-                System.out.println("We don't have that kind of taco, (for now) Please try again.");
+            switch (size) {
+                case "1" -> {
+                    taco.setSize("Single");
+                    validOption = true;
+                }
+                case "2" -> {
+                    taco.setSize("3-Taco");
+                    validOption = true;
+                }
+                case "3" -> {
+                    taco.setSize("Burrito");
+                    validOption = true;
+                }
+                default -> System.out.println("We don't have that kind of taco, (for now..) Please try again.");
             }
         }
 
@@ -92,25 +103,42 @@ public class UserInterface {
 
         while (!validOption) {
             System.out.println("Great! What shell would you like?");
-            System.out.println("Corn, Flour, Hard Shell or Bowl?");
+            System.out.println("1.) Corn");
+            System.out.println("2.) Flour");
+            System.out.println("3.) Hard Shell");
+            System.out.println("4.) Bowl");
             System.out.print("Please choose one of the four options: ");
 
             String shell = scanner.nextLine();
 
-            if (shell.equalsIgnoreCase("corn")
-                    || shell.equalsIgnoreCase("flour")
-                    || shell.equalsIgnoreCase("hard shell")
-                    || shell.equalsIgnoreCase("bowl")) {
-
-                taco.setShell(shell);
-                validOption = true;
-
-            } else {
-                System.out.println("Invalid shell option. Please try again.");
+            switch (shell) {
+                case "1" -> {
+                    taco.setShell("Corn");
+                    validOption = true;
+                }
+                case "2" -> {
+                    taco.setShell("Flour");
+                    validOption = true;
+                }
+                case "3" -> {
+                    taco.setShell("Hard Shell");
+                    validOption = true;
+                }
+                case "4" -> {
+                    taco.setShell("Bowl");
+                    validOption = true;
+                }
+                default -> {
+                    System.out.println("Sorry, please try choosing a valid shell option again.");
+                }
+            }
+                displayAddMeat(taco);
             }
 
         }
-    }
+
+
+
 
     public void displayAddDrink() {
 
@@ -139,6 +167,58 @@ public class UserInterface {
             for (IPriceable priceable : order.getItems()) {
                 System.out.println(priceable);
             }
+        }
+    }
+
+    public void displayAddMeat(Taco taco) {
+        boolean addingMeats = true;
+
+        while (addingMeats) {
+
+            System.out.println("\nChoose a meat:");
+            System.out.println("1) Carne Asada");
+            System.out.println("2) Al Pastor");
+            System.out.println("3) Carnitas");
+            System.out.println("4) Pollo");
+            System.out.println("5) Chorizo");
+            System.out.println("6) Pescado");
+            System.out.println("0) Done Adding Meats");
+
+            String meatChoice = scanner.nextLine();
+
+            if (meatChoice.equals("0")) {
+                addingMeats = false;
+                continue;
+            }
+
+            String meatName;
+
+            switch (meatChoice) {
+                case "1" -> meatName = "Carne Asada";
+                case "2" -> meatName = "Al Pastor";
+                case "3" -> meatName = "Carnitas";
+                case "4" -> meatName = "Pollo";
+                case "5" -> meatName = "Chorizo";
+                case "6" -> meatName = "Pescado";
+                default -> {
+                    System.out.println("Invalid meat option.");
+                    continue;
+                }
+            }
+
+            System.out.println("Would you like extra meat?");
+            System.out.println("1) Yes");
+            System.out.println("2) No");
+
+            String extraChoice = scanner.nextLine();
+
+            boolean isExtra = extraChoice.equals("1");
+
+            Meat meat = new Meat(meatName, isExtra);
+
+            taco.addTopping(meat);
+
+            System.out.println(meatName + " added!");
         }
     }
 }
