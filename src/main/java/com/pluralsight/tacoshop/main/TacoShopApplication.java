@@ -1,6 +1,7 @@
 package com.pluralsight.tacoshop.main;
 
 import com.pluralsight.tacoshop.model.ChipsAndSalsa;
+import com.pluralsight.tacoshop.model.Drink;
 import com.pluralsight.tacoshop.model.Order;
 import com.pluralsight.tacoshop.service.ReceiptFileManager;
 import com.pluralsight.tacoshop.ui.UserInterface;
@@ -11,7 +12,9 @@ public class TacoShopApplication {
         ui.display(); */
         Order order = new Order();
        ChipsAndSalsa chipsAndSalsa = new ChipsAndSalsa("Pico De Gallo");
+        Drink drink = new Drink("horchata", "small");
 
         System.out.println(chipsAndSalsa);
+        System.out.println(drink);
     }
 }

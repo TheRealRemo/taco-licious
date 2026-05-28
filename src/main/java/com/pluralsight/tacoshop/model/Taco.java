@@ -56,17 +56,53 @@ public class Taco implements IPriceable {
         return price + toppingPrice;
     }
 
+    public double calculateBasePrice() {
+        double price = 0.00;
+        if (getSize().equalsIgnoreCase("single")) {
+            price = 3.50;
+        } else if (getSize().equalsIgnoreCase("3-taco")) {
+            price = 9.00;
+        } else if (getSize().equalsIgnoreCase("burrito")) {
+            price = 8.50;
+        }
+        return price;
+    }
+
     public void addTopping(Topping topping) {
         toppings.add(topping);
     }
 
     @Override
     public String toString() {
-        return "Taco{" +
-                "size='" + size + '\'' +
-                ", shell='" + shell + '\'' +
-                ", toppings=" + toppings +
-                ", isCoveredInSalsaAndQueso=" + isCoveredInSalsaAndQueso +
-                '}';
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+
+        stringBuilder.append(shell)
+                .append(" ")
+                .append(size)
+                .append("\n");
+
+        stringBuilder.append("Base Price: $")
+                .append(calculateBasePrice())
+                .append("\n");
+
+        stringBuilder.append("Toppings:\n");
+
+        for (Topping topping : toppings) {
+            double price = topping.getPrice(getSize());
+            stringBuilder.append("- ")
+                    .append(topping);
+            if (price > 0) {
+                stringBuilder.append(" $")
+                        .append(price);
+            }
+            stringBuilder.append("\n");
+        }
+
+        stringBuilder.append("Total Price: $")
+                .append(calculatePrice());
+
+        return stringBuilder.toString();
     }
 }
