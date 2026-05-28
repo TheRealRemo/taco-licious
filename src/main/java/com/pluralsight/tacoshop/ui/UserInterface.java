@@ -98,46 +98,10 @@ public class UserInterface {
                 default -> System.out.println("We don't have that kind of taco, (for now..) Please try again.");
             }
         }
+        displayShellChoice(taco);
+        displayAddMeat(taco);
 
-        validOption = false;
-
-        while (!validOption) {
-            System.out.println("Great! What shell would you like?");
-            System.out.println("1.) Corn");
-            System.out.println("2.) Flour");
-            System.out.println("3.) Hard Shell");
-            System.out.println("4.) Bowl");
-            System.out.print("Please choose one of the four options: ");
-
-            String shell = scanner.nextLine();
-
-            switch (shell) {
-                case "1" -> {
-                    taco.setShell("Corn");
-                    validOption = true;
-                }
-                case "2" -> {
-                    taco.setShell("Flour");
-                    validOption = true;
-                }
-                case "3" -> {
-                    taco.setShell("Hard Shell");
-                    validOption = true;
-                }
-                case "4" -> {
-                    taco.setShell("Bowl");
-                    validOption = true;
-                }
-                default -> {
-                    System.out.println("Sorry, please try choosing a valid shell option again.");
-                }
-            }
-                displayAddMeat(taco);
-            }
-
-        }
-
-
+    }
 
 
     public void displayAddDrink() {
@@ -183,6 +147,7 @@ public class UserInterface {
             System.out.println("5) Chorizo");
             System.out.println("6) Pescado");
             System.out.println("0) Done Adding Meats");
+            System.out.print("Please enter option here: ");
 
             String meatChoice = scanner.nextLine();
 
@@ -219,6 +184,43 @@ public class UserInterface {
             taco.addTopping(meat);
 
             System.out.println(meatName + " added!");
+        }
+    }
+
+    public void displayShellChoice(Taco taco) {
+        boolean validOption = false;
+        while (!validOption) {
+            System.out.println("Great! What shell would you like?");
+            System.out.println("1.) Corn");
+            System.out.println("2.) Flour");
+            System.out.println("3.) Hard Shell");
+            System.out.println("4.) Bowl");
+            System.out.print("Please choose one of the four options: ");
+
+            String shell = scanner.nextLine();
+
+            switch (shell) {
+                case "1" -> {
+                    taco.setShell("Corn");
+                    validOption = true;
+                }
+                case "2" -> {
+                    taco.setShell("Flour");
+                    validOption = true;
+                }
+                case "3" -> {
+                    taco.setShell("Hard Shell");
+                    validOption = true;
+                }
+                case "4" -> {
+                    taco.setShell("Bowl");
+                    validOption = true;
+                }
+                default -> {
+                    System.out.println("Sorry, please try choosing a valid shell option again.");
+                }
+            }
+
         }
     }
 }
