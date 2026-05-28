@@ -100,14 +100,14 @@ public class Taco implements IPriceable {
 
             if (price > 0) {
                 stringBuilder.append(" $")
-                        .append(price);
+                        .append(String.format("%.2f", price));
             }
 
             stringBuilder.append("\n");
         }
 
         stringBuilder.append("Total Price: $")
-                .append(calculatePrice());
+                .append(String.format("%.2f", calculatePrice()));
 
         return stringBuilder.toString();
     }

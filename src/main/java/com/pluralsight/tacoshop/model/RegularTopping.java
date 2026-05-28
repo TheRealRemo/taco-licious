@@ -11,4 +11,10 @@ public class RegularTopping extends Topping {
     public  double getPrice(String size){
         return 0.00;
     }
-}
+
+    @Override
+    public String toString() {
+        return getName();
+        }
+    }
+

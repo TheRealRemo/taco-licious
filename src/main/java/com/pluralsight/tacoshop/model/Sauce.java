@@ -12,6 +12,6 @@ public class Sauce extends Topping {
 
     @Override
     public String toString() {
-        return "Sauces: " + getName();
+        return  getName();
     }
 }

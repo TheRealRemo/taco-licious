@@ -29,7 +29,7 @@ public class Meat extends PremiumTopping {
 
     @Override
     public String toString() {
-        String extra = "";
+        String extra;
         if (isExtra()) {
             extra = "(Extra)";
         } else {

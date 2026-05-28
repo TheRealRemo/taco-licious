@@ -105,6 +105,7 @@ public class UserInterface {
         displayAddSauces(taco);
 
         order.addItem(taco);
+        System.out.println("\nTaco added to order! Yum! Anything else? Drink? Chips?");
     }
 
 
@@ -304,15 +305,15 @@ public class UserInterface {
             String toppingName;
 
             switch (toppingChoice) {
-                case "1" -> toppingName = "lettuce";
-                case "2" -> toppingName = "cilantro";
-                case "3" -> toppingName = "onions";
-                case "4" -> toppingName = "tomatoes";
-                case "5" -> toppingName = "jalapeños";
-                case "6" -> toppingName = "radishes";
-                case "7" -> toppingName = "pico de gallo";
-                case "8" -> toppingName = "guacamole";
-                case "9" -> toppingName = "corn";
+                case "1" -> toppingName = "Lettuce";
+                case "2" -> toppingName = "Cilantro";
+                case "3" -> toppingName = "Onions";
+                case "4" -> toppingName = "Tomatoes";
+                case "5" -> toppingName = "Jalapeños";
+                case "6" -> toppingName = "Radishes";
+                case "7" -> toppingName = "Pico de gallo";
+                case "8" -> toppingName = "Guacamole";
+                case "9" -> toppingName = "Corn";
                 default -> {
                     System.out.println("Invalid topping option.");
                     continue;
@@ -326,6 +327,7 @@ public class UserInterface {
             System.out.println(toppingName + " added!");
         }
     }
+
     public void displayAddSauces(Taco taco) {
         boolean addingSauces = true;
 
