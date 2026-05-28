@@ -1,9 +1,6 @@
 package com.pluralsight.tacoshop.ui;
 
-import com.pluralsight.tacoshop.model.Cheese;
-import com.pluralsight.tacoshop.model.Meat;
-import com.pluralsight.tacoshop.model.Order;
-import com.pluralsight.tacoshop.model.Taco;
+import com.pluralsight.tacoshop.model.*;
 import com.pluralsight.tacoshop.model.interfaces.IPriceable;
 
 import java.util.Scanner;
@@ -104,7 +101,10 @@ public class UserInterface {
         displayShellChoice(taco);
         displayAddMeat(taco);
         displayAddCheese(taco);
+        displayAddRegularToppings(taco);
+        displayAddSauces(taco);
 
+        order.addItem(taco);
     }
 
 
@@ -277,5 +277,54 @@ public class UserInterface {
         }
     }
 
+    public void displayAddRegularToppings(Taco taco) {
+        boolean addingToppings = true;
 
-}
+        while (addingToppings) {
+
+            System.out.println("\nChoose a regular topping:");
+            System.out.println("1) Lettuce");
+            System.out.println("2) Cilantro");
+            System.out.println("3) Onions");
+            System.out.println("4) Tomatoes");
+            System.out.println("5) Jalapeños");
+            System.out.println("6) Radishes");
+            System.out.println("7) Pico De Gallo");
+            System.out.println("8) Guacamole");
+            System.out.println("9) Corn");
+            System.out.println("0) Done Adding Toppings");
+
+            String toppingChoice = scanner.nextLine();
+
+            if (toppingChoice.equals("0")) {
+                addingToppings = false;
+                continue;
+            }
+
+            String toppingName;
+
+            switch (toppingChoice) {
+                case "1" -> toppingName = "lettuce";
+                case "2" -> toppingName = "cilantro";
+                case "3" -> toppingName = "onions";
+                case "4" -> toppingName = "tomatoes";
+                case "5" -> toppingName = "jalapeños";
+                case "6" -> toppingName = "radishes";
+                case "7" -> toppingName = "pico de gallo";
+                case "8" -> toppingName = "guacamole";
+                case "9" -> toppingName = "corn";
+                default -> {
+                    System.out.println("Invalid topping option.");
+                    continue;
+                }
+            }
+
+            RegularTopping topping = new RegularTopping(toppingName);
+
+            taco.addTopping(topping);
+
+            System.out.println(toppingName + " added!");
+        }
+    }}
+
+
