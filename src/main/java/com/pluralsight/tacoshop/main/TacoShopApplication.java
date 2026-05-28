@@ -13,8 +13,10 @@ public class TacoShopApplication {
         Order order = new Order();
        ChipsAndSalsa chipsAndSalsa = new ChipsAndSalsa("Pico De Gallo");
         Drink drink = new Drink("horchata", "small");
+        order.addItem(drink);
+        order.addItem(chipsAndSalsa);
 
-        System.out.println(chipsAndSalsa);
-        System.out.println(drink);
+        System.out.println(order);
+
     }
 }

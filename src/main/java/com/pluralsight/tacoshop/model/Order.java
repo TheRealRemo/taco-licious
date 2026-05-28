@@ -18,6 +18,7 @@ public class Order implements IPriceable {
     public ArrayList<IPriceable> getItems() {
         return items;
     }
+
     @Override
     public double calculatePrice() {
         double totalPrice = 0.00;
@@ -29,8 +30,17 @@ public class Order implements IPriceable {
 
     @Override
     public String toString() {
-        return "Order{" +
-                "items=" + items +
-                '}';
+        StringBuilder stringBuilder = new StringBuilder();
+        for (IPriceable item : items) {
+            stringBuilder.append(item)
+                    .append("\n");
+
+        }
+        stringBuilder.append("\n")
+                .append("Grand Total: $")
+                .append(String.format("%.2f", calculatePrice()));
+
+        return stringBuilder.toString();
+
     }
 }
