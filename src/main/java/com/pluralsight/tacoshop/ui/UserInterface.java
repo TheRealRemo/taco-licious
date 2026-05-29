@@ -98,13 +98,16 @@ public class UserInterface {
                 default -> System.out.println("We don't have that kind of taco, (for now..) Please try again.");
             }
         }
+
         displayShellChoice(taco);
         displayAddMeat(taco);
         displayAddCheese(taco);
         displayAddRegularToppings(taco);
         displayAddSauces(taco);
+        displayCoverInSalsaAndQueso(taco);
 
         order.addItem(taco);
+
         System.out.println("\nTaco added to order! Yum! Anything else? Drink? Chips?");
     }
 
@@ -423,6 +426,32 @@ public class UserInterface {
             taco.addTopping(sauce);
 
             System.out.println(sauceName + " added!");
+        }
+    }
+
+    public void displayCoverInSalsaAndQueso(Taco taco) {
+        boolean validOption = false;
+
+        while (!validOption) {
+
+            System.out.println("\nWould you like your taco covered in salsa and queso?");
+            System.out.println("1) Yes");
+            System.out.println("2) No");
+            System.out.print("Please enter option here: ");
+
+            String coverChoice = scanner.nextLine();
+
+            switch (coverChoice) {
+                case "1" -> {
+                    taco.setCoveredInSalsaAndQueso(true);
+                    validOption = true;
+                }
+                case "2" -> {
+                    taco.setCoveredInSalsaAndQueso(false);
+                    validOption = true;
+                }
+                default -> System.out.println("Invalid option. Please try again.");
+            }
         }
     }
 
