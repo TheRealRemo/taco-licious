@@ -38,33 +38,30 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 
 ## Demo
+![GIF](https://i.imgur.com/FdebX2x.gif)
 
-Include screenshots or GIFs that show your application in action. Use tools like [Giphy Capture](https://giphy.com/apps/giphycapture) to record a GIF of your application.
-
-![Application Screenshot](path/to/your/screenshot.png)
+![Application Screenshot](https://i.imgur.com/BxCTfAk.png)
 
 ## Future Work
 
 
 - Cleaner UI
-- Improvement of current functionalities.
+- Bug fixing
+- Signature Taco Additions
 
 ## Resources
 
-List resources such as tutorials, articles, or documentation that helped you during the project.
 
-- [Java Programming Tutorial](https://www.example.com)
-- [Effective Java](https://www.example.com)
 
-## Team Members
+- [Capstone 2 Visuals](https://raymaroun.github.io/yearup-java-visuals/week-08/index.html#coding-phase)
+- [DateTimeFormatter Visuals](https://raymaroun.github.io/yearup-java-visuals/week-03/visuals/05-datetime-formatter.html)
+- [BroCode Switch Case]([DateTimeFormatter Visuals](https://raymaroun.github.io/yearup-java-visuals/week-03/visuals/05-datetime-formatter.html))
+- [String Builder Tutorial](https://www.youtube.com/watch?v=MOZ3FAw8l1s))
 
-- **Name 1** - Specific contributions or roles.
-- **Name 2** - Specific contributions or roles.
 
 ## Thanks
 
-Express gratitude towards those who provided help, guidance, or resources:
 
-- Thank you to [Mentor's Name] for continuous support and guidance.
-- A special thanks to all teammates for their dedication and teamwork.
+- Thank you very much Ray, through the stress of it all a little direction goes a long way.
+- Thank you (again) Adam for your encouragement to keep going.
  
