@@ -42,7 +42,7 @@ public class Taco implements IPriceable {
     @Override
     public double calculatePrice() {
         double price = 0.00;
-        if (getSize().equalsIgnoreCase("single")) {
+        if (getSize().equalsIgnoreCase("single taco")) {
             price = 3.50;
         } else if (getSize().equalsIgnoreCase("3-taco")) {
             price = 9.00;
@@ -58,7 +58,7 @@ public class Taco implements IPriceable {
 
     public double calculateBasePrice() {
         double price = 0.00;
-        if (getSize().equalsIgnoreCase("single")) {
+        if (getSize().equalsIgnoreCase("single taco")) {
             price = 3.50;
         } else if (getSize().equalsIgnoreCase("3-taco")) {
             price = 9.00;
@@ -84,7 +84,7 @@ public class Taco implements IPriceable {
                 .append("\n");
 
         stringBuilder.append("Base Price: $")
-                .append(calculateBasePrice())
+                .append(String.format("%.2f",calculateBasePrice()))
                 .append("\n");
 
         stringBuilder.append("Toppings:\n");

@@ -17,7 +17,7 @@ public class Meat extends PremiumTopping {
             price = 2.25;
         }
         double extraPrice = 0.00;
-        if (size.equalsIgnoreCase("single") && isExtra()) {
+        if (size.equalsIgnoreCase("single taco") && isExtra()) {
             extraPrice = 0.30;
         } else if (size.equalsIgnoreCase("3-taco") && isExtra()) {
             extraPrice = 0.60;

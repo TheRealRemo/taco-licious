@@ -84,7 +84,7 @@ public class UserInterface {
 
             switch (size) {
                 case "1" -> {
-                    taco.setSize("Single");
+                    taco.setSize("Single Taco");
                     validOption = true;
                 }
                 case "2" -> {
@@ -110,7 +110,60 @@ public class UserInterface {
 
 
     public void displayAddDrink() {
+        Drink drink = new Drink(null, null);
+        boolean validOption = false;
 
+        while (!validOption) {
+
+            System.out.println("\nChoose a drink:");
+            System.out.println("1) Orange Fanta");
+            System.out.println("2) Coke");
+            System.out.println("3) Sprite");
+            System.out.println("4) Horchata");
+            System.out.print("Please enter option here: ");
+
+            String flavorChoice = scanner.nextLine();
+
+            String flavor;
+
+            switch (flavorChoice) {
+                case "1" -> flavor = "Orange Fanta";
+                case "2" -> flavor = "Coke";
+                case "3" -> flavor = "Sprite";
+                case "4" -> flavor = "Horchata";
+                default -> {
+                    System.out.println("Invalid drink option.");
+                    continue;
+                }
+            }
+
+            System.out.println("\nChoose a size:");
+            System.out.println("1) Small ($2.00)");
+            System.out.println("2) Medium ($2.50)");
+            System.out.println("3) Large ($3.00)");
+            System.out.print("Please enter option here: ");
+
+            String sizeChoice = scanner.nextLine();
+
+            String size;
+
+            switch (sizeChoice) {
+                case "1" -> size = "Small";
+                case "2" -> size = "Medium";
+                case "3" -> size = "Large";
+                default -> {
+                    System.out.println("Invalid size option.");
+                    continue;
+                }
+            }
+
+            drink = new Drink(flavor, size);
+            validOption = true;
+        }
+
+        order.addItem(drink);
+
+        System.out.println("\n" + drink + " added!");
     }
 
     public void displayAddChipsAndSalsa() {
@@ -216,7 +269,7 @@ public class UserInterface {
             System.out.println("Would you like extra meat?");
             System.out.println("1) Yes");
             System.out.println("2) No");
-
+            System.out.print("Enter here: ");
             String extraChoice = scanner.nextLine();
 
             boolean isExtra = extraChoice.equals("1");
@@ -265,7 +318,7 @@ public class UserInterface {
             System.out.println("Would you like extra cheese?");
             System.out.println("1) Yes");
             System.out.println("2) No");
-
+            System.out.print("Enter here: ");
             String extraChoice = scanner.nextLine();
 
             boolean isExtra = extraChoice.equals("1");
@@ -311,7 +364,7 @@ public class UserInterface {
                 case "4" -> toppingName = "Tomatoes";
                 case "5" -> toppingName = "Jalapeños";
                 case "6" -> toppingName = "Radishes";
-                case "7" -> toppingName = "Pico de gallo";
+                case "7" -> toppingName = "Pico De Gallo";
                 case "8" -> toppingName = "Guacamole";
                 case "9" -> toppingName = "Corn";
                 default -> {
