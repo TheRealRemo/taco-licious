@@ -29,8 +29,12 @@ public class ReceiptFileManager {
                 file.createNewFile();
             }
             BufferedWriter bw = new BufferedWriter(new FileWriter("receipts/" + fileName));
+            bw.write("===== Taco-Licious Receipt =====");
+            bw.newLine();
+            bw.newLine();
 
             bw.write(order.toString());
+
 
             bw.close();
         } catch (IOException e) {

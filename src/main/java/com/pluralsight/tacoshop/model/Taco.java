@@ -107,7 +107,7 @@ public class Taco implements IPriceable {
         }
 
         if (isCoveredInSalsaAndQueso) {
-            stringBuilder.append("Covered In: Salsa And Queso")
+            stringBuilder.append("- Covered In Salsa And Queso")
                     .append("\n");
         }
 
