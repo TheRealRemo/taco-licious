@@ -1,15 +1,20 @@
-# Project Title
+# Taco-Licious (Taco Shop)
+## Description 
 
-## Description of the Project
+Taco-Licious is a Java console application that simulates a customizable taco restaurant ordering experience. Customers can create and manage orders through an interactive menu-driven interface, selecting from a variety of tacos, drinks, chips and salsa, and toppings.
 
-Briefly describe what this Java console application does. Mention its purpose and who the intended users are. Explain the main functionality and what problems it aims to solve.
-
+The application uses object-oriented programming principles including inheritance, polymorphism, abstraction, and interfaces to model menu items and pricing behavior. Customers can build tacos by choosing a size, shell type, meats, cheeses, regular toppings, sauces, and optional sides such as crema or lime wedges. Pricing is calculated dynamically based on selections and portion sizes.
 ## User Stories
 
-List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
 
-- As a user, I want to be able to input my data, so that the application can process it accordingly.
-- As a user, I want to receive immediate feedback, so I can understand what to do next.
+
+- As a customer, I would like to be able to customize my taco, so I can add my preferred toppings
+- As a customer, I would like to be able to use a menu, so that I can start an order
+- As a customer, I want the application to prevent me from checking out with an empty order, so that I am prompted to buy a drink or chips & salsa if I don't want a taco
+- As a customer at checkout, I want to view a full summary of my order with my items, price, and extras, so that I can verify the details and total cost before ordering.
+- As a customer, I would like the option to add extra toppings, so that I can have my taco to my preference
+- As a customer, I would like to be able to add a drink with different flavors and sizes, so that I can purchase a beverage of my preference
+- As a user I would like the option to cover my taco in salsa and queso, so that I can have my taco to my preference
 
 ## Setup
 

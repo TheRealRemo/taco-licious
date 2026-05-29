@@ -31,7 +31,7 @@ public class Cheese extends PremiumTopping {
     public String toString() {
         String extra = "";
         if (isExtra()) {
-            extra = "(Extra)";
+            extra = " (Extra)";
         } else {
             extra = "";
         }

@@ -57,7 +57,11 @@ public class UserInterface {
                 case "1" -> displayAddTaco();
                 case "2" -> displayAddDrink();
                 case "3" -> displayAddChipsAndSalsa();
-                case "4" -> displayCheckout();
+                case "4" -> {
+                    if (displayCheckout()) {
+                        isOrdering = false;
+                    }
+                }
                 case "0" -> isOrdering = false;
                 default -> System.out.println("Invalid Input Please Try Again");
             }
@@ -206,14 +210,12 @@ public class UserInterface {
 
 
 
-    public void displayCheckout() {
+    public boolean displayCheckout() {
 
         System.out.println("\n========== CHECKOUT ==========");
         System.out.println(order);
 
-        boolean validOption = false;
-
-        while (!validOption) {
+        while (true) {
 
             System.out.println("\n1) Confirm Order");
             System.out.println("0) Cancel Order");
@@ -231,13 +233,12 @@ public class UserInterface {
                             + fileManager.getFileName());
                     System.out.println("Enjoy your meal!");
 
-                    validOption = true;
+                    return true;
                 }
 
                 case "0" -> {
-
                     System.out.println("\nOrder cancelled.");
-                    validOption = true;
+                    return true;
                 }
 
                 default -> System.out.println("Invalid option. Please try again.");
@@ -245,7 +246,7 @@ public class UserInterface {
         }
     }
 
-    //helper methods
+    //display helper methods
 
     /// for printing out order items
     public void displayOrder() {
