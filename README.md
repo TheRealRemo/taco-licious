@@ -16,10 +16,6 @@ The application uses object-oriented programming principles including inheritanc
 - As a customer, I would like to be able to add a drink with different flavors and sizes, so that I can purchase a beverage of my preference
 - As a user I would like the option to cover my taco in salsa and queso, so that I can have my taco to my preference
 
-## Setup
-
-Instructions on how to set up and run the project using IntelliJ IDEA.
-
 ### Prerequisites
 
 - IntelliJ IDEA: Ensure you have IntelliJ IDEA installed, which you can download from [here](https://www.jetbrains.com/idea/download/).
@@ -33,12 +29,12 @@ Follow these steps to get your application running within IntelliJ IDEA:
 2. Select "Open" and navigate to the directory where you cloned or downloaded the project.
 3. After the project opens, wait for IntelliJ to index the files and set up the project.
 4. Find the main class with the `public static void main(String[] args)` method.
-5. Right-click on the file and select 'Run 'YourMainClassName.main()'' to start the application.
+5. Right-click on the file and select 'Run 'TacoShopApplication.main()'' to start the application.
 
 ## Technologies Used
 
-- Java: Mention the version you are using.
-- Any additional libraries or frameworks used in the project.
+- Java: Amazon Corretto 17
+
 
 ## Demo
 
@@ -48,9 +44,8 @@ Include screenshots or GIFs that show your application in action. Use tools like
 
 ## Future Work
 
-Outline potential future enhancements or functionalities you might consider adding:
 
-- Additional feature to be developed.
+- Cleaner UI
 - Improvement of current functionalities.
 
 ## Resources

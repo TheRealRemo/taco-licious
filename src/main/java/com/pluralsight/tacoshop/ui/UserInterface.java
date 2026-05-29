@@ -58,9 +58,9 @@ public class UserInterface {
                 case "2" -> displayAddDrink();
                 case "3" -> displayAddChipsAndSalsa();
                 case "4" -> {
-                    if (displayCheckout()) {
-                        isOrdering = false;
-                    }
+                    displayCheckout();
+                    isOrdering = false;
+
                 }
                 case "0" -> isOrdering = false;
                 default -> System.out.println("Invalid Input Please Try Again");
@@ -209,17 +209,18 @@ public class UserInterface {
     }
 
 
-
-    public boolean displayCheckout() {
+    public void displayCheckout() {
 
         System.out.println("\n========== CHECKOUT ==========");
         System.out.println(order);
 
-        while (true) {
+        boolean validOption = false;
+
+        while (!validOption) {
 
             System.out.println("\n1) Confirm Order");
             System.out.println("0) Cancel Order");
-            System.out.print("Please enter choice here: ");
+            System.out.print("Please enter here: ");
 
             String input = scanner.nextLine();
 
@@ -228,20 +229,17 @@ public class UserInterface {
                 case "1" -> {
                     ReceiptFileManager fileManager = new ReceiptFileManager();
                     fileManager.saveReceipt(order);
-
-                    System.out.println("\nReceipt saved as: "
-                            + fileManager.getFileName());
-                    System.out.println("Enjoy your meal!");
-
-                    return true;
+                    validOption = true;
+                    System.out.println("\nOrder complete, here is your receipt! Enjoy your food!\n");
                 }
 
                 case "0" -> {
-                    System.out.println("\nOrder cancelled.");
-                    return true;
+                    validOption = true;
+                    System.out.println("\nOrder cancelled! No worries!");
                 }
 
-                default -> System.out.println("Invalid option. Please try again.");
+
+                default -> System.out.println("Invalid option.");
             }
         }
     }
@@ -415,6 +413,7 @@ public class UserInterface {
             System.out.println("8) Guacamole");
             System.out.println("9) Corn");
             System.out.println("0) Done Adding Toppings");
+            System.out.print("Please enter here: ");
 
             String toppingChoice = scanner.nextLine();
 
