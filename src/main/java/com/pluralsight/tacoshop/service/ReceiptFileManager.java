@@ -30,10 +30,9 @@ public class ReceiptFileManager {
             }
             BufferedWriter bw = new BufferedWriter(new FileWriter("receipts/" + fileName));
 
-            for (IPriceable priceable : order.getItems()) {
-                bw.write(priceable.toString());
-                bw.newLine();
-            }
+            bw.write(order.toString());
+
+            bw.close();
         } catch (IOException e) {
             System.out.println("File Error");
         }

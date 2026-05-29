@@ -9,20 +9,20 @@ public class Meat extends PremiumTopping {
     @Override
     public double getPrice(String size) {
         double price = 0.00;
-        if (size.equalsIgnoreCase("single")) {
-            price = 0.75;
+        if (size.equalsIgnoreCase("single taco")) {
+            price = 1.00;
         } else if (size.equalsIgnoreCase("3-taco")) {
-            price = 1.50;
+            price = 2.00;
         } else if (size.equalsIgnoreCase("burrito")) {
-            price = 2.25;
+            price = 3.00;
         }
         double extraPrice = 0.00;
         if (size.equalsIgnoreCase("single taco") && isExtra()) {
-            extraPrice = 0.30;
+            extraPrice = 0.50;
         } else if (size.equalsIgnoreCase("3-taco") && isExtra()) {
-            extraPrice = 0.60;
+            extraPrice = 1.00;
         } else if (size.equalsIgnoreCase("burrito") && isExtra()) {
-            extraPrice = 0.90;
+            extraPrice = 1.50;
         }
         return price + extraPrice;
     }

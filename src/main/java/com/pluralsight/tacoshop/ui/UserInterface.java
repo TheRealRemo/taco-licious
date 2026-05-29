@@ -2,6 +2,7 @@ package com.pluralsight.tacoshop.ui;
 
 import com.pluralsight.tacoshop.model.*;
 import com.pluralsight.tacoshop.model.interfaces.IPriceable;
+import com.pluralsight.tacoshop.service.ReceiptFileManager;
 
 import java.util.Scanner;
 
@@ -26,7 +27,7 @@ public class UserInterface {
                 displayNewOrder();
             } else if (input.equals("0")) {
                 running = false;
-                System.out.println("Goodbye!");
+                System.out.println("\nThank you for coming!");
             } else {
                 System.out.println("Invalid option, please try again.");
             }
@@ -207,6 +208,41 @@ public class UserInterface {
 
     public void displayCheckout() {
 
+        System.out.println("\n========== CHECKOUT ==========");
+        System.out.println(order);
+
+        boolean validOption = false;
+
+        while (!validOption) {
+
+            System.out.println("\n1) Confirm Order");
+            System.out.println("0) Cancel Order");
+            System.out.print("Please enter choice here: ");
+
+            String input = scanner.nextLine();
+
+            switch (input) {
+
+                case "1" -> {
+                    ReceiptFileManager fileManager = new ReceiptFileManager();
+                    fileManager.saveReceipt(order);
+
+                    System.out.println("\nReceipt saved as: "
+                            + fileManager.getFileName());
+                    System.out.println("Enjoy your meal!");
+
+                    validOption = true;
+                }
+
+                case "0" -> {
+
+                    System.out.println("\nOrder cancelled.");
+                    validOption = true;
+                }
+
+                default -> System.out.println("Invalid option. Please try again.");
+            }
+        }
     }
 
     //helper methods
