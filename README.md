@@ -15,7 +15,8 @@ The application uses object-oriented programming principles including inheritanc
 - As a customer, I would like the option to add extra toppings, so that I can have my taco to my preference
 - As a customer, I would like to be able to add a drink with different flavors and sizes, so that I can purchase a beverage of my preference
 - As a user I would like the option to cover my taco in salsa and queso, so that I can have my taco to my preference
-
+### Class Diagram
+![Class Diagram](https://i.imgur.com/Od3lwoJ.png)
 ### Prerequisites
 
 - IntelliJ IDEA: Ensure you have IntelliJ IDEA installed, which you can download from [here](https://www.jetbrains.com/idea/download/).

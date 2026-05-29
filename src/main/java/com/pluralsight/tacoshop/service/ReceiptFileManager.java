@@ -16,10 +16,6 @@ public class ReceiptFileManager {
     private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyyMMdd-hhmmss");
     private String fileName = time.format(dateTimeFormatter) + ".txt";
 
-    public String getFileName() {
-        return fileName;
-    }
-
     public void saveReceipt(Order order) {
 
 
