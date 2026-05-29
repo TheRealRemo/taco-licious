@@ -9,7 +9,7 @@ public class Cheese extends PremiumTopping {
     @Override
     public double getPrice(String size) {
         double price = 0.00;
-        if (size.equalsIgnoreCase("single")) {
+        if (size.equalsIgnoreCase("single taco")) {
             price = 0.75;
         } else if (size.equalsIgnoreCase("3-taco")) {
             price = 1.50;
