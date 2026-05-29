@@ -12,6 +12,6 @@ public class Side extends Topping {
 
     @Override
     public String toString() {
-        return "Sides: " + getName();
+        return  getName();
     }
 }

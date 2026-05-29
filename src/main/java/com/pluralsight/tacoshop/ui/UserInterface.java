@@ -46,8 +46,7 @@ public class UserInterface {
             System.out.println("1) Add Taco");
             System.out.println("2) Add Drink");
             System.out.println("3) Add Chips And Salsa");
-            System.out.println("4) Add Side");
-            System.out.println("5) Checkout");
+            System.out.println("4) Checkout");
             System.out.println("0) Cancel Order");
             System.out.println("--------------------------");
             System.out.print("Please enter choice here: ");
@@ -57,8 +56,7 @@ public class UserInterface {
                 case "1" -> displayAddTaco();
                 case "2" -> displayAddDrink();
                 case "3" -> displayAddChipsAndSalsa();
-                case "4" -> displayAddSide();
-                case "5" -> displayCheckout();
+                case "4" -> displayCheckout();
                 case "0" -> isOrdering = false;
                 default -> System.out.println("Invalid Input Please Try Again");
             }
@@ -105,6 +103,7 @@ public class UserInterface {
         displayAddRegularToppings(taco);
         displayAddSauces(taco);
         displayCoverInSalsaAndQueso(taco);
+        displayAddSide(taco);
 
         order.addItem(taco);
 
@@ -204,9 +203,7 @@ public class UserInterface {
         }
     }
 
-    public void displayAddSide() {
 
-    }
 
     public void displayCheckout() {
 
@@ -483,6 +480,44 @@ public class UserInterface {
                 }
                 default -> System.out.println("Invalid option. Please try again.");
             }
+        }
+    }
+
+    public void displayAddSide(Taco taco) {
+
+        boolean addingSides = true;
+
+        while (addingSides) {
+
+            System.out.println("\nChoose a side:");
+            System.out.println("1) Crema");
+            System.out.println("2) Lime Wedges");
+            System.out.println("0) Done Adding Sides");
+            System.out.print("Please enter option here: ");
+
+            String sideChoice = scanner.nextLine();
+
+            if (sideChoice.equals("0")) {
+                addingSides = false;
+                continue;
+            }
+
+            String sideName;
+
+            switch (sideChoice) {
+                case "1" -> sideName = "Crema";
+                case "2" -> sideName = "Lime Wedges";
+                default -> {
+                    System.out.println("Invalid side option.");
+                    continue;
+                }
+            }
+
+            Side side = new Side(sideName);
+
+            taco.addTopping(side);
+
+            System.out.println(sideName + " added!");
         }
     }
 
