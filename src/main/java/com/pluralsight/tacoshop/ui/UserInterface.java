@@ -58,9 +58,12 @@ public class UserInterface {
                 case "2" -> displayAddDrink();
                 case "3" -> displayAddChipsAndSalsa();
                 case "4" -> {
-                    displayCheckout();
-                    isOrdering = false;
-
+                    if (order.getItems().isEmpty()) {
+                        System.out.println("\nYou must add at least one item before checking out.");
+                    } else {
+                        displayCheckout();
+                        isOrdering = false;
+                    }
                 }
                 case "0" -> isOrdering = false;
                 default -> System.out.println("Invalid Input Please Try Again");
