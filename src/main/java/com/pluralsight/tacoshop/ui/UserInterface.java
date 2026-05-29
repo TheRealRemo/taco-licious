@@ -171,6 +171,37 @@ public class UserInterface {
 
     public void displayAddChipsAndSalsa() {
 
+        boolean validOption = false;
+
+        while (!validOption) {
+
+            System.out.println("\nChoose a salsa for your chips:");
+            System.out.println("1) Salsa Verde");
+            System.out.println("2) Salsa Roja");
+            System.out.println("3) Pico De Gallo");
+            System.out.print("Please enter option here: ");
+
+            String salsaChoice = scanner.nextLine();
+
+            String salsaType;
+
+            switch (salsaChoice) {
+                case "1" -> salsaType = "Salsa Verde";
+                case "2" -> salsaType = "Salsa Roja";
+                case "3" -> salsaType = "Pico De Gallo";
+                default -> {
+                    System.out.println("Invalid salsa option.");
+                    continue;
+                }
+            }
+
+            ChipsAndSalsa chipsAndSalsa = new ChipsAndSalsa(salsaType);
+
+            order.addItem(chipsAndSalsa);
+
+            System.out.println("\nChips and " + salsaType + " added!");
+            validOption = true;
+        }
     }
 
     public void displayAddSide() {
