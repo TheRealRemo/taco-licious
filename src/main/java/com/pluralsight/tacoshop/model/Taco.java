@@ -106,6 +106,11 @@ public class Taco implements IPriceable {
             stringBuilder.append("\n");
         }
 
+        if (isCoveredInSalsaAndQueso) {
+            stringBuilder.append("Covered In: Salsa And Queso")
+                    .append("\n");
+        }
+
         stringBuilder.append("Total Price: $")
                 .append(String.format("%.2f", calculatePrice()));
 
