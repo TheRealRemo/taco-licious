@@ -55,7 +55,7 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 - [Capstone 2 Visuals](https://raymaroun.github.io/yearup-java-visuals/week-08/index.html#coding-phase)
 - [DateTimeFormatter Visuals](https://raymaroun.github.io/yearup-java-visuals/week-03/visuals/05-datetime-formatter.html)
-- [BroCode Switch Case]([DateTimeFormatter Visuals](https://raymaroun.github.io/yearup-java-visuals/week-03/visuals/05-datetime-formatter.html))
+- [BroCode Switch Case](https://raymaroun.github.io/yearup-java-visuals/week-03/visuals/05-datetime-formatter.html)
 - [String Builder Tutorial](https://www.youtube.com/watch?v=MOZ3FAw8l1s)
 
 
